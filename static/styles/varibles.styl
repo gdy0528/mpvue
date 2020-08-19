@@ -1,0 +1,99 @@
+$bgColor = #F2F2F2                 //全局底部背景色
+$bgWhiteColor = #FFFFFF             //背景白色
+$bgMainColor = #5086FF              //app主色
+$bgGrayColor = #F8F8F8              //背景灰色
+$bgLightGrayColor = #EFEFEF          //背景灰色1(浅灰)
+$bgDarkGrayColor = #C1C1C1          //背景灰色2(深灰)
+// 分割色
+$divisionColor = #EFEFEF                //分割颜色（主）
+$divisionAssistOneColor = #F2F2F2       //分割颜色（辅）
+$divisionAssistTwoColor = #DCDCDC       //分割颜色（辅）
+// 通用字体颜色
+$fontMainColor = #5086FF            //字体app主色
+$fontWhiteColor = #FFFFFF           //默认字体颜色
+$fontBlackColor = #333333           //字体主黑色
+$fontLightBlackColor = #666666      //字体黑色（浅黑）
+$fontGrayColor = #999999            //字体灰色
+$fontDarkGrayColor = #C1C1C1        //字体灰色2(深灰)
+$fontRedColor = #DD0000             //价格、拼团标签、倒计时颜色
+// 通用字体大小
+$fontMaxSize = 18px                 //最大字体
+$fontSmallSize = 15px               //中等字体
+$fontSize = 14px                    //默认字体
+$fontMinSize = 12px                 //最小字体
+$fontMiniMumSize = 11px             //最小字体
+// 按钮颜色
+$btnMainColor = #5086FF             //按钮app主色 
+$btnRedColor = #DD0000              //价格、拼团标签、倒计时颜色
+$btnInvalidColor = #C1D5FF          //失效颜色
+// 常用高度
+$topHeight = 54px                   //顶部高度
+$bottomHeight = 48px                //底部高度
+//字体溢出
+ellipsis(nums=1)
+  if nums == 1
+    text-overflow ellipsis
+    overflow hidden
+    white-space nowrap
+  else if nums > 1
+    overflow hidden
+    display -webkit-box
+    -webkit-box-orient vertical
+    text-overflow ellipsis
+    -webkit-line-clamp nums
+    word-break break-word
+//圆角（全局圆角只适应）
+fillet()  
+  box-sizing border-box
+  min-width 16px
+  padding 0 3px
+  font-weight 500
+  line-height 14px
+  text-align center
+  border 1px solid #fff
+  border-radius 16px
+  -webkit-transform translateX(50%)
+  transform translateX(50%)
+  -webkit-transform-origin 100%
+  transform-origin 100%
+//按钮垂直居中(解决安卓)
+btnvertical() 
+  transform scale(0.5)
+  transform-origin 0 0
+//禁止长按复制（ios）
+duplication() 
+  -webkit-touch-callout none  /*系统默认菜单被禁用*/
+  -webkit-user-select none /*webkit浏览器*/
+  -khtml-user-select none /*早期浏览器*/
+  -moz-user-select none /*火狐*/
+  -ms-user-select none  /*IE10*/
+  user-select none
+//设置区域 X&Y 轴滑动
+scroll(type)
+  overflow hidden
+  if type == "y"
+    overflow-y auto
+  else if type == "x"
+    overflow-x auto
+  -webkit-overflow-scrolling touch
+  -webkit-backface-visibility hidden
+  -webkit-transform translate3d(0,0,0)
+  scrollbar-width none /* firefox */
+  -ms-overflow-style none /* IE 10+ */
+  &::-webkit-scrollbar
+    display none
+//清除input和textarea的默认样式
+outline()
+  outline none
+  resize none
+//placeholder字体颜色修改
+placeholder(args)
+  &::-webkit-input-placeholder
+    color args
+  &::-moz-placeholder
+    color args
+  &:-moz-placeholder
+    color args
+  &:-ms-input-placeholder
+    color args
+
