@@ -22,4 +22,8 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped></style>
+<style lang="stylus" scoped>
+  .images
+    width 100px
+    height 100px
+</style>

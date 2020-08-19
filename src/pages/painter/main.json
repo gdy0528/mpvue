@@ -1,6 +1,6 @@
 {
   "navigationBarTitleText": "测试在线绘图",
   "usingComponents": {
-    "painter": "/static/js/painter2d/painter"
+    "painter": "/static/painter2d/painter"
   }
 }

@@ -23,7 +23,7 @@ export default {
         background: '#FFFFFF',
         borderRadius: '20rpx',
         views: [
-          CTR.setImages('/static/img/painter-bg.jpg', 0, 0, {
+          CTR.setImages(require('@img/painter-bg.png'), 0, 0, {
             width: '700rpx',
             height: '1000rpx'
           }),
@@ -45,7 +45,7 @@ export default {
           CTR.serRect(20, 20, 497, 58, {
             color: '#FFFFFF'
           }),
-          CTR.setImages('/static/img/painter01.png', 50, 90, {
+          CTR.setImages(require('@img/painter01.png'), 50, 90, {
             width: '600rpx',
             height: '250rpx'
           })

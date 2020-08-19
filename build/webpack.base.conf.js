@@ -50,8 +50,8 @@ let baseWebpackConfig = {
       '@utils': resolve('src/utils'),
       '@common': resolve('src/components'),
       '@api': resolve('src/api'),
-      '@img': resolve('static/img'),
-      '@js': resolve('static/js'),
+      '@img': resolve('src/assets/img'),
+      '@js': resolve('src/assets/js'),
       '@styles': resolve('src/assets/styles')
     },
     symlinks: false,

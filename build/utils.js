@@ -65,8 +65,8 @@ exports.cssLoaders = function (options) {
 
   const stylusOptions = {
     import: [
-      path.join(__dirname, "../static/styles/varibles.styl"), // variables.styl全局变量文件
-      path.join(__dirname, "../static/styles/reset.styl") // variables.styl全局变量文件
+      path.join(__dirname, "../src/assets/styles/varibles.styl"), // variables.styl全局变量文件
+      path.join(__dirname, "../src/assets/styles/reset.styl") // variables.styl全局变量文件
     ],
     paths: [
       path.join(__dirname, "../static/"),
