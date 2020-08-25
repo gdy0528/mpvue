@@ -95,8 +95,19 @@ export default {
 
 <style lang="stylus" scoped>
   .Calendar
+    & >>> .mc-today-element
+      .calendar-date
+        background transparent
+        border-radius 0px
+    & >>> .mpvue-calendar 
+      .selected
+        .calendar-date
+          color $fontBlackColor
+          border-radius 0px
+          background transparent
     & >>> .holiday
       .slot-element
+        left 8px
         margin-top -10px
         font-size $fontMiniMumSize
         color $fontMainColor

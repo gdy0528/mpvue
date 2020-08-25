@@ -3,7 +3,8 @@
     <painter
       :customStyle="customStyle"
       @imgOK="handleChangeImgOk"
-      :dancePalette="template"
+      :dancePalette="dancePalette"
+      :palette="paintPallette"
       use2D
     />
   </div>
@@ -15,18 +16,18 @@ export default {
   name: 'PosterPainter',
   data() {
     return {
-      imagePath: '',  //图片路径
       customStyle: "margin-left:25rpx;margin-top:30rpx;",
-      template: { //绘画模板
+      paintPallette: '',  //保存图片模板
+      dancePalette: { //绘画模板
         width: '700rpx',
         height: '1000rpx',
         background: '#FFFFFF',
         borderRadius: '20rpx',
         views: [
-          CTR.setImages(require('@img/painter-bg.png'), 0, 0, {
-            width: '700rpx',
-            height: '1000rpx'
-          }),
+          // CTR.setImages(require('@img/banner.jpg'), 0, 0, {
+          //   width: '700rpx',
+          //   height: '1000rpx'
+          // }),
           CTR.setText("程序开发", 135, 57, 22, {
             color: "#FFFFFF"
           }),
@@ -45,19 +46,32 @@ export default {
           CTR.serRect(20, 20, 497, 58, {
             color: '#FFFFFF'
           }),
-          CTR.setImages(require('@img/painter01.png'), 50, 90, {
-            width: '600rpx',
-            height: '250rpx'
-          })
+          // CTR.setImages(require('@img/title.png'), 50, 90, {
+          //   width: '600rpx',
+          //   height: '250rpx'
+          // }),
+          // CTR.setImages(require('@img/left.png'), 50, 400, {
+          //   width: '160rpx',
+          //   height: '53rpx'
+          // }),
+          // CTR.setImages(require('@img/right.png'), 500, 400, {
+          //   width: '160rpx',
+          //   height: '53rpx'
+          // })
         ]
       }
     }
   },
   methods: {
     handleChangeImgOk(e) {  //监听绘画的地址
-      this.imagePath = e.mp.detail.path
       this.$emit('imgUrl', e.mp.detail.path)
+    },
+    handleSaveImages() {   //生成默认图片
+      this.paintPallette = this.dancePalette
     }
+  },
+  onUnload() {  //监听页面卸载
+    this.paintPallette = ""
   }
 }
 </script>
